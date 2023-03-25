@@ -5,7 +5,7 @@ const app = express();
 require("dotenv").config();
 
 //variables
-const db = "",
+let db = "",
     dbConnectionString = process.env.DB_STRING,
     dbName = "sample_mflix",
     collection = "";
@@ -18,3 +18,7 @@ MongoClient.connect(dbConnectionString)
         db = client.db(dbName);
         collection = db.collection("movies");
     });
+
+app.listen(process.env.PORT || PORT, () => {
+    console.log("The app is listening");
+});
