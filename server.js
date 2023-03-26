@@ -19,6 +19,7 @@ MongoClient.connect(dbConnectionString)
         collection = db.collection("movies");
     });
 
+//Setting up middleware
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
